@@ -1,5 +1,6 @@
 from beerlog.core import get_beers_from_database, add_beer_to_database
 
+#test
 
 def test_add_beer_to_database():
     assert add_beer_to_database("Blue Moon", "Witbier", 10, 3, 6)
