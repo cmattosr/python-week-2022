@@ -27,6 +27,12 @@ jobs:
       - name: Install Project
         run: poetry install
       
+      - name: Look for style errors
+        run: poetry run flake8 beerlog
+      
+      - name: Look for auto format errors
+        run: poetry run black -l 79 --check --diff beerlog tests
+      
       - name: Run tests
         run: poetry run pytest -v --junitxml=test-result.xml
       
