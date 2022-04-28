@@ -1,6 +1,8 @@
 from datetime import datetime
-from pydantic import BaseModel, validator
+
 from fastapi import HTTPException, status
+from pydantic import BaseModel, validator
+
 
 class BeerOut(BaseModel):
     id: int

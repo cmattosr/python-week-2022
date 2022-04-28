@@ -1,11 +1,11 @@
-import typer
 from typing import Optional
+
+import typer
+from rich import print
 from rich.console import Console
 from rich.table import Table
-from rich import print
 
 from beerlog.core import add_beer_to_database, get_beers_from_database
-
 
 main = typer.Typer(help="Beer Management Application")
 console = Console()
@@ -31,7 +31,9 @@ def list_beers(style: Optional[str] = None):
     """Lists beers from the database"""
     beers = get_beers_from_database(style)
     table = Table(
-        title=":beer_mug: Beerlog Database" if not style else f"Beerlog {style}"
+        title=":beer_mug: Beerlog Database"
+        if not style
+        else f"Beerlog {style}"
     )
     headers = [
         "id",
